@@ -117,6 +117,7 @@
     <div class="doc-content-cases" v-if="casesImages.length">
       <div class="doc-content-hd">
         <h4 class="doc-content-title">应用案例</h4>
+        <a class="sub-more" href="#/case">More</a>
       </div>
       <div class="doc-content-cases-content">
         <div class="doc-content-cases-content__main">

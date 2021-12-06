@@ -47,6 +47,11 @@ const site_config = {
       path: 'demo.html'
     },
     {
+      name: 'case',
+      cName: '资源',
+      path: '#/case'
+    },
+    {
       name: 'resource',
       cName: '资源',
       path: '#/resource'

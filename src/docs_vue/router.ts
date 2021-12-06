@@ -2,6 +2,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import Index from '@/views/Index.vue';
 import Resource from '@/views/Resource.vue';
+import Case from '@/views/Case.vue';
 import Notice from '@/views/Notice.vue';
 import NoticeDetail from '@/views/NoticeDetail.vue';
 import Main from '@/views/Main.vue';
@@ -54,6 +55,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'index',
     component: Index,
     children: pagesRouter
+  },
+  {
+    path: '/case',
+    name: 'case',
+    component: Case
   },
   {
     path: '/resource',
