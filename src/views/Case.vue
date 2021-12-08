@@ -11,7 +11,9 @@
     <div class="resource-block">
       <h4 class="sub-title">上传案例地址</h4>
       <p class="sub-desc">
-        <a class="download" target="_blank" href="https://github.com/jdf2e/nutui-user-cases">点击上传 </a>
+        请<a class="download" target="_blank" href="https://get.jd.com/#/survey/index?id=4217247740034539"> 点击上传 </a
+        >或微信扫描下方二维码。<br />
+        <img class="sub-ercode" src="@/assets/images/case-ercode.png" />
       </p>
     </div>
     <div class="resource-block">
@@ -176,6 +178,10 @@ $mainRed: #fa685d;
       line-height: 22px;
       font-size: 16px;
       color: #959fb1;
+      .sub-ercode {
+        width: 130px;
+        margin-top: 40px;
+      }
     }
     .sub-red {
       color: #fa2c19;
