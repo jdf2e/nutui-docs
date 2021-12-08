@@ -48,7 +48,7 @@ const site_config = {
     },
     {
       name: 'case',
-      cName: '资源',
+      cName: '案例',
       path: '#/case'
     },
     {
@@ -68,6 +68,14 @@ const site_config = {
     }
   ]
 };
-import { docs, nav, version } from '../docs_vue/config.json';
+import vueConfig from '../docs_vue/config.json';
+import reactConfig from '../docs_react/config.json';
+let config: any = {};
+if (import.meta.env.BASE_URL.includes('react')) {
+  config = reactConfig;
+} else {
+  config = vueConfig;
+}
+let { nav, docs, version, demoUrl } = config;
 const { versions, header } = site_config;
-export { nav, versions, header, docs, version };
+export { nav, versions, header, docs, version, demoUrl };

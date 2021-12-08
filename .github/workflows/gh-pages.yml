@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - next # default branch
+      - master # default branch
 
 jobs:
   deploy:
@@ -12,8 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn install
       - run: yarn build:gh-pages
+      - run: yarn build:gh-pages:react
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/3x
+          publish_dir: ./dist/

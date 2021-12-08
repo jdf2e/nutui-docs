@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import Markdown from 'vite-plugin-md';
 import path from 'path';
-import config from './package.json';
+import config from './src/docs_vue/config.json';
 const hljs = require('highlight.js'); // https://highlightjs.org/
 const resolve = path.resolve;
 // https://vitejs.dev/config/
@@ -11,6 +11,7 @@ export default defineConfig({
   server: {
     port: 2021,
     host: '0.0.0.0',
+    open: '/3x/index.html',
     proxy: {
       '/devServer': {
         target: 'https://nutui.jd.com',

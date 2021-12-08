@@ -29,19 +29,15 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "dev": "tsc && vite --open --force",
+    "dev": "tsc && vite --force",
     "build": "vite build",
-    "build:gh-pages": "vite build --base=/nutui/",
     "build:oss": "vite build --base=/nutui/3x/",
-
-    "dev:react": "tsc && vite --open --force --config vite.config.react.ts",
+    "dev:react": "tsc && vite --force --config vite.config.react.ts",
     "build:react": "vite build --config vite.config.react.ts",
-    "build:gh-pages:react": "vite build --base=/nutui-react/",
     "build:oss:react": "vite build --base=/nutui/react/",
-
+    "build:gh-pages": "vite build --base=/nutui-docs/",
+    "build:gh-pages:react": "vite build --config vite.config.react.ts --base=/nutui-docs/react/",
     "upload": "npm run build:oss && npm run  build:oss:react && node ./jd/upload.js",
-
-
     "serve": "vite preview",
     "prepare": "husky install",
     "test": "jest",

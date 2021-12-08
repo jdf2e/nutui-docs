@@ -5,7 +5,6 @@ import '@/assets/styles/reset.scss';
 import '@/assets/styles/md-style.scss';
 import DemoBlock from '@/components/demo-block';
 import { Hover } from '@/directive/hover/hover';
-
 import { isMobile } from '@/assets/util';
 
 if (isMobile) {

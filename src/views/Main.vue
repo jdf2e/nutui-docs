@@ -1,12 +1,15 @@
 <template>
-  <div class="v3-banner" :class="{ active: false }">NutUI 现已发布 Vue3.x 版本，带来更强大的功能和出色的体验</div>
+  <div class="v3-banner" :class="{ active: true }">
+    NutUI 正在参与 OSC 2021 年度中国开源项目评选（您的鼓励是我们坚持不懈的源动力)，请为我们投上宝贵的一票吧。
+    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui" target="_blank">去投票</a>
+  </div>
   <doc-header></doc-header>
   <div class="doc-content" :class="themeName()">
     <div class="doc-content-index">
       <div class="content-left">
         <div class="content-title"> NutUI </div>
         <div class="content-smile"> </div>
-        <div class="content-subTitle">京东风格的轻量级移动端 Vue 组件库</div>
+        <div class="content-subTitle">京东风格的轻量级移动端 Vue、React 组件库</div>
         <div class="content-button">
           <div class="leftButton" @click="toIntro">
             <div class="leftButtonText">开始使用</div>
@@ -165,11 +168,11 @@
 import { defineComponent, onMounted, reactive, toRefs, computed, ref } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import router from '../docs_vue/router';
 import { RefData } from '@/assets/util/ref';
 import { ApiService } from '@/service/ApiService';
 import 'swiper/swiper.min.css';
 import Swiper from 'swiper/swiper-bundle.min.js';
+import { useRouter } from 'vue-router';
 export default defineComponent({
   name: 'main',
   components: {
@@ -177,6 +180,7 @@ export default defineComponent({
     [Footer.name]: Footer
   },
   setup() {
+    const router = useRouter();
     const data = reactive({
       // theme: 'white',
       articleList: new Array(),
@@ -261,7 +265,7 @@ export default defineComponent({
       window.open('//jelly.jd.com/article/' + id);
     };
     function toIntro() {
-      router.push({ path: '/intro' });
+      router.push({ name: 'intro' });
     }
     const toDetail = () => {
       window.open('/cat');
@@ -289,9 +293,13 @@ export default defineComponent({
   &.active {
     top: $doc-header-height;
   }
+  > a {
+    color: #fff;
+    font-weight: bold;
+  }
   font-size: 14px;
   width: 100%;
-  z-index: 1;
+  z-index: 999;
   text-align: center;
   padding: 10px 60px;
   color: #fff;

@@ -25,7 +25,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, reactive, toRefs, computed } from 'vue';
-import { nav } from '@/config/index';
+import { demoUrl, nav } from '@/config/index';
 import { onBeforeRouteUpdate, RouteLocationNormalized, useRoute, useRouter } from 'vue-router';
 import Header from '@/components/Header.vue';
 import Nav from '@/components/Nav.vue';
@@ -89,7 +89,7 @@ export default defineComponent({
       const { origin, pathname } = window.location;
       RefData.getInstance().currentRoute.value = router.name as string;
       // data.demoUrl = `${origin}${pathname.replace('index.html', '')}demo.html#${router.path}`;
-      data.demoUrl = `https://nutui.jd.com/demo.html#${router.path}`;
+      data.demoUrl = `${demoUrl}${router.path}`;
     };
 
     const watchDocMd = () => {

@@ -1,0 +1,438 @@
+{
+  "version": "1.0.0",
+  "demoUrl": "https://nutui.jd.com/react/demo.html#",
+  "docs": {
+    "name": "指南",
+    "packages": [
+      {
+        "name": "intro-react",
+        "cName": "介绍",
+        "show": true
+      },
+      {
+        "name": "start-react",
+        "cName": "快速上手",
+        "show": true
+      },
+      {
+        "name": "theme-react",
+        "cName": "主题定制",
+        "show": true
+      },
+      {
+        "name": "international",
+        "cName": "国际化",
+        "show": false
+      },
+      {
+        "name": "resource",
+        "cName": "资源",
+        "show": true
+      },
+      {
+        "name": "contributing",
+        "cName": "贡献指南",
+        "path": "#/contributing",
+        "show": true
+      },
+      {
+        "name": "https://github.com/jdf2e/nutui-react/releases",
+        "cName": "更新日志",
+        "show": true,
+        "isLink": true
+      }
+    ]
+  },
+  "nav": [
+    {
+      "name": "基础组件",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Avatar",
+          "type": "component",
+          "cName": "头像",
+          "desc": "用来代表用户或事物，支持图片、图标或字符展示。",
+          "sort": 2,
+          "show": true,
+          "author": "junjun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Button",
+          "type": "component",
+          "cName": "按钮",
+          "desc": "按钮",
+          "sort": 1,
+          "show": true,
+          "author": ""
+        },
+        {
+          "version": "1.0.0",
+          "name": "Cell",
+          "type": "component",
+          "cName": "列表组件",
+          "desc": "列表项，可组成列表",
+          "sort": 2,
+          "show": true,
+          "author": "songsong"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Icon",
+          "type": "component",
+          "cName": "图标组件",
+          "desc": "图标",
+          "sort": 1,
+          "show": true,
+          "author": "oasis-cloud"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Price",
+          "type": "component",
+          "cName": "价格",
+          "desc": "用来对商品价格数值的小数点前后部分应用不同样式，还支持人民币符号、千位分隔符、设置小数点位数等功能。",
+          "sort": 4,
+          "show": true,
+          "author": "songsong"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Overlay",
+          "type": "component",
+          "cName": "遮罩层",
+          "desc": "创建一个遮罩层，通常用于阻止用户进行其他操作",
+          "sort": 5,
+          "show": true,
+          "author": "junjun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Divider",
+          "type": "component",
+          "cName": "分割线",
+          "desc": "用于将内容分隔为多个区域",
+          "sort": 7,
+          "show": true,
+          "author": "vickyYE"
+        }
+      ]
+    },
+    {
+      "name": "布局组件",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Layout",
+          "type": "component",
+          "cName": "布局",
+          "desc": "协助进行页面级整体布局。",
+          "sort": 1,
+          "show": true,
+          "author": "yushuang24"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Row",
+          "type": "component",
+          "cName": "行",
+          "desc": "布局组件中的行",
+          "sort": 2,
+          "show": true,
+          "author": "yushuang24"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Col",
+          "type": "component",
+          "cName": "列",
+          "desc": "布局组件中的列",
+          "sort": 3,
+          "show": true,
+          "author": "yushuang24"
+        }
+      ]
+    },
+    {
+      "name": "操作反馈",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Drag",
+          "type": "component",
+          "cName": "拖拽",
+          "desc": "实现可拖拽的任意元素",
+          "sort": 1,
+          "show": true,
+          "author": "songsong"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Collapse",
+          "type": "component",
+          "cName": "折叠面板",
+          "desc": "折叠面板，可进行内容折叠展开操作，可以多面板配合使用。",
+          "sort": 2,
+          "show": true,
+          "author": "zhenyulei"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Toast",
+          "type": "component",
+          "cName": "吐司",
+          "desc": "轻提示",
+          "sort": 1,
+          "show": true,
+          "author": "VickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "BackTop",
+          "type": "component",
+          "cName": "返回顶部",
+          "desc": "提供较长的页面快捷返回顶部功能。",
+          "sort": 2,
+          "show": true,
+          "author": "vickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Range",
+          "type": "component",
+          "cName": "区间选择器",
+          "desc": "滑动输入条，用于在给定的范围内选择一个值。",
+          "sort": 3,
+          "show": true,
+          "author": "vickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Infiniteloading",
+          "type": "component",
+          "cName": "滚动加载",
+          "desc": "列表滚动到底部自动加载更多数据。",
+          "sort": 5,
+          "show": true,
+          "author": "swag~jun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Steps",
+          "type": "component",
+          "cName": "步骤条",
+          "desc": "拆分展示某项流程的步骤，引导用户按流程完成任务或向用户展示当前状态。",
+          "sort": 7,
+          "show": true,
+          "author": "swag~jun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Notify",
+          "type": "component",
+          "cName": "消息通知",
+          "desc": "在页面顶部展示消息提示",
+          "sort": 8,
+          "show": false,
+          "author": "vickyYE"
+        },
+        {
+          "version": "1.0.0",
+          "name": "CircleProgress",
+          "type": "component",
+          "cName": "进度条",
+          "desc": "展示操作或任务的当前进度。",
+          "sort": 7,
+          "show": true,
+          "author": "swag~jun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Popup",
+          "sort": 9,
+          "cName": "弹出层",
+          "type": "component",
+          "show": true,
+          "desc": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示",
+          "author": "szg2008"
+        }
+      ]
+    },
+    {
+      "name": "导航组件",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "NavBar",
+          "type": "component",
+          "cName": "导航组件",
+          "desc": "提供导航功能。",
+          "sort": 1,
+          "show": true,
+          "author": "dsj"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Tabbar",
+          "type": "component",
+          "cName": "标签栏组件",
+          "desc": "底部导航常用场景",
+          "sort": 2,
+          "show": true,
+          "author": "dsj"
+        },
+        {
+          "version": "1.0.0",
+          "name": "InputNumber",
+          "type": "component",
+          "cName": "数字输入框",
+          "desc": "通过点击按钮控制数字增减。",
+          "sort": 3,
+          "show": true,
+          "author": "swag~jun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Elevator",
+          "type": "component",
+          "cName": "电梯楼层",
+          "desc": "用于列表快速定位以及索引的显示",
+          "sort": 4,
+          "show": true,
+          "author": "songsong"
+        },
+        {
+          "version": "1.0.0",
+          "name": "FixedNav",
+          "type": "component",
+          "cName": "悬浮导航",
+          "desc": "悬浮收齐体验交互，用于快捷导航",
+          "sort": 5,
+          "show": true,
+          "author": "Ymm0008"
+        }
+      ]
+    },
+    {
+      "name": "数据录入",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Rate",
+          "type": "component",
+          "cName": "评分",
+          "desc": "用于快速的评级操作，或对评价进行展示。",
+          "sort": 1,
+          "show": true,
+          "author": "dsj"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Uploader",
+          "type": "component",
+          "cName": "上传",
+          "desc": "用于将本地的图片或文件上传至服务器。",
+          "sort": 1,
+          "show": true,
+          "author": "swag~jun"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Input",
+          "type": "component",
+          "cName": "输入框",
+          "desc": "单行输入框",
+          "sort": 1,
+          "show": true,
+          "author": "VickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "TextArea",
+          "type": "component",
+          "cName": "文本域",
+          "desc": "文本框内输入或编辑文字，支持限制输入数量。",
+          "sort": 2,
+          "show": true,
+          "author": "VickyYe"
+        },
+        {
+          "version": "1.0.0",
+          "name": "CheckBox",
+          "type": "component",
+          "cName": "复选按钮",
+          "desc": "多选按钮用于选择。",
+          "sort": 4,
+          "show": true,
+          "author": "oasis"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Tag",
+          "type": "component",
+          "cName": "标签",
+          "desc": "用于标记和分类。",
+          "sort": 4,
+          "show": true,
+          "author": "lzz"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Badge",
+          "type": "component",
+          "cName": "徽标",
+          "desc": "在图标或文字右上角的红色圆点、数字或者文字，表示有新内容或者待处理的信息。",
+          "sort": 4,
+          "show": true,
+          "author": "lzz"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Popover",
+          "type": "component",
+          "cName": "气泡弹出框",
+          "desc": "点击或在元素上悬停鼠标，弹出气泡卡片浮层。",
+          "sort": 4,
+          "show": true,
+          "author": "lzz"
+        },
+        {
+          "version": "1.0.0",
+          "name": "AnimatingNumbers",
+          "type": "component",
+          "cName": "数字动画",
+          "desc": "带特效的数字",
+          "sort": 7,
+          "show": true,
+          "author": "songsong"
+        }
+      ]
+    },
+    {
+      "name": "特色组件",
+      "packages": [
+        {
+          "version": "1.0.0",
+          "name": "Signature",
+          "type": "component",
+          "cName": "签字",
+          "desc": "基于Canvas的签名组件",
+          "sort": 1,
+          "show": true,
+          "author": "songsong"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Barrage",
+          "type": "component",
+          "cName": "弹幕",
+          "desc": "用于话语和词组的轮播展示，适用于视频中或其他类似需求中。",
+          "sort": 2,
+          "show": true,
+          "author": "swag~jun"
+        }
+      ]
+    }
+  ]
+}
