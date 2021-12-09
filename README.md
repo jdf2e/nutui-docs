@@ -87,7 +87,6 @@
 NutUI 已经投入了我们的生产环境中使用，业界也在广泛地使用 NutUI 开发多端应用。
 
 <img src="https://raw.githubusercontent.com/jdf2e/nutui-user-cases/master/user-cases.jpg" width="800" alt="NutUI" />
-
 <p>
     <a href="https://nutui.jd.com/#/case">
        查看等多的案例，请点击
