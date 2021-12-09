@@ -35,7 +35,7 @@
 
 <p>
    <img src="https://img12.360buyimg.com/imagetools/jfs/t1/162421/39/13392/9425/6052ea60E592310a9/264bdff23ef5fe95.png" width="100" alt="NutUI" />
-   <img src="https://storage.360buyimg.com/jdc-article/gh_f2231eb941be_258.jpg" style="margin-left:20px" width="100" alt="NutUI" />  
+   <img src="https://storage.360buyimg.com/jdc-article/gh_f2231eb941be_258.jpg" style="margin-left:40px" width="100" alt="NutUI" />  
 </p>
 
 ## 版本说明 & 支持环境
@@ -109,7 +109,7 @@ NutUI 已经投入了我们的生产环境中使用，业界也在广泛地使�
 
 | Github Issue | 微信群 |京东内部咚咚群 |
 | --- | --- |--- |
-| [jdf2e/nutui/issues](https://github.com/jdf2e/nutui/issues) | <img src="https://nutui.jd.com/3x/3.1.12/vx-code1.png" width="60" /> 关注后回复「NutUI」 |[82957939](timline://chat/?topin=82957939&type=2)  |
+| [jdf2e/nutui/issues](https://github.com/jdf2e/nutui/issues) | <img src="https://nutui.jd.com/3x/3.1.12/vx-code1.png" width="60" /> 关注后回复「NutUI」 | <a href="timline://chat/?topin=82957939&type=2" target="_blank">82957939</a> |
 
 ## 贡献者们
 
