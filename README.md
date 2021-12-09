@@ -44,13 +44,13 @@
 
 > 如果想要兼容低版本，请使用 @nutui/nutui
 
-* @nutui/nutui  基于 Vue2 视觉风格 JD APP 7.0 规范 ，只能开发 h5，支持现代浏览器以及 Android >= 4.0、iOS >= 8.0
+* @nutui/nutui  基于 Vue2 视觉风格 JD APP 7.0 规范 ，只能开发 h5；支持现代浏览器以及 Android >= 4.0、iOS >= 8.0
 
-* @nutui/nutui-jdl 基于 Vue2 视觉风格 JDL 规范 ，只能开发 h5，支持现代浏览器以及 Android >= 4.0、iOS >= 8.0
+* @nutui/nutui-jdl 基于 Vue2 视觉风格 JDL 规范 ，只能开发 h5；支持现代浏览器以及 Android >= 4.0、iOS >= 8.0
 
-* @nutui/nutui@next 基于 Vue3 视觉风格 JD APP 10.0规范 ，只能开发 h5，支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue3 一致）
+* @nutui/nutui@next 基于 Vue3 视觉风格 JD APP 10.0规范 ，只能开发 h5；支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue3 一致）
 
-* @nutui/nutui-taro 基于 Vue3 视觉风格 JD APP 10.0规范 ，支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue3 一致），必须基于 Taro + Vue3 框架 进行开发多端（多端指一套代码 部署多端环境 微信小程序 h5 等第三方小程序）
+* @nutui/nutui-taro 基于 Vue3 视觉风格 JD APP 10.0规范 ，必须基于 Taro + Vue3 框架 进行开发多端（多端指一套代码 部署多端环境 微信小程序 h5 等第三方小程序）；支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue3 一致）
 
 
 ## 构建版本
