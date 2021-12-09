@@ -21,6 +21,12 @@
     </a>
 </p>
 
+<p align="center">
+    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui" style="width:600px;height:56px;background:#f00;color:#fff;">
+        NutUI 正在参加《2021 年度 OSC 中国开源项目》评选，请为我们投上宝贵的一票吧。 去投票
+    </a>
+</p>
+
 ---
 
 
