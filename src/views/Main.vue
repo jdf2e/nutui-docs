@@ -1,8 +1,4 @@
 <template>
-  <div class="v3-banner" :class="{ active: true }">
-    NutUI 正在参与 OSC 2021 年度中国开源项目评选（您的鼓励是我们坚持不懈的源动力)，请为我们投上宝贵的一票吧。
-    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui" target="_blank">去投票</a>
-  </div>
   <doc-header></doc-header>
   <div class="doc-content" :class="themeName()">
     <div class="doc-content-index">
@@ -286,30 +282,6 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.v3-banner {
-  position: fixed;
-  top: 0;
-  transition: all 0.3s;
-  &.active {
-    top: $doc-header-height;
-  }
-  > a {
-    color: #fff;
-    font-weight: bold;
-  }
-  font-size: 14px;
-  width: 100%;
-  z-index: 999;
-  text-align: center;
-  padding: 10px 60px;
-  color: #fff;
-  background: linear-gradient(
-    135deg,
-    rgba(242, 20, 12, 1) 0%,
-    rgba(232, 34, 14, 1) 69.83950099728881%,
-    rgba(242, 77, 12, 1) 100%
-  );
-}
 @keyframes fadeInLeft {
   from {
     opacity: 0;
