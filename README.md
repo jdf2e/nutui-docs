@@ -1,11 +1,11 @@
 
 <p align="center">
-    <img alt="logo" src="https://img11.360buyimg.com/imagetools/jfs/t1/211965/25/7152/22022/61b16785E433119bb/aa41d7a9f7e823f3.png" width="387" height="162" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://img11.360buyimg.com/imagetools/jfs/t1/211965/25/7152/22022/61b16785E433119bb/aa41d7a9f7e823f3.png" width="150" style="margin-bottom: 10px;">
 </p>
 
 <p align="center">京东风格的轻量级移动端 Vue2、Vue3 组件库</p>
 
-<p align="center">（支持多端小程序开发）</p>
+<p align="center">（支持一套代码生成 H5 和小程序）</p>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/@nutui/nutui.svg" alt="npm version" />
@@ -14,6 +14,12 @@
     <img src="https://img.shields.io/npm/l/@nutui/nutui.svg" alt="license"/>
 </p>
 
+
+<p align="center">
+    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui">
+        <img src="https://img14.360buyimg.com/imagetools/jfs/t1/217965/11/7169/67019/61b1b9bbE79da966d/40673980687886ab.jpg" width="600" alt="support" />
+    </a>
+</p>
 
 ---
 
