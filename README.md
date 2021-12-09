@@ -14,16 +14,9 @@
     <img src="https://img.shields.io/npm/l/@nutui/nutui.svg" alt="license"/>
 </p>
 
-
 <p align="center">
-    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui">
-        <img src="https://img14.360buyimg.com/imagetools/jfs/t1/217965/11/7169/67019/61b1b9bbE79da966d/40673980687886ab.jpg" width="600" alt="support" />
-    </a>
-</p>
-
-<p align="center">
-    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui" style="width:600px;height:56px;background:#f00;color:#fff;">
-        NutUI 正在参加《2021 年度 OSC 中国开源项目》评选，请为我们投上宝贵的一票吧。 去投票
+    <a href="https://www.oschina.net/project/top_cn_2021/?id=65&fr=nutui" style="width:600px;height:60px;background:#f00;color:#fff;padding:5px;">
+        NutUI 正在参加《2021 年度 OSC 中国开源项目》评选，请为我们投上宝贵的一票吧。 去投票💪
     </a>
 </p>
 
