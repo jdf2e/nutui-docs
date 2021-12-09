@@ -109,7 +109,7 @@ NutUI 已经投入了我们的生产环境中使用，业界也在广泛地使�
 
 | Github Issue | 微信群 |京东内部咚咚群 |
 | --- | --- |--- |
-| [jdf2e/nutui/issues](https://github.com/jdf2e/nutui/issues) | <img src="https://nutui.jd.com/3x/3.1.12/vx-code1.png" width="60" /> 关注后回复「NutUI」 | <a href="timline://chat/?topin=82957939&type=2" target="_blank">82957939</a> |
+| [jdf2e/nutui/issues](https://github.com/jdf2e/nutui/issues) | <img src="https://nutui.jd.com/3x/3.1.12/vx-code1.png" width="60" /> 关注后回复「NutUI」 | [82957939](timline://chat/?topin=82957939&type=2)|
 
 ## 贡献者们
 
