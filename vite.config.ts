@@ -3,7 +3,9 @@ import vue from '@vitejs/plugin-vue';
 import Markdown from 'vite-plugin-md';
 import path from 'path';
 import config from './src/docs_vue/config.json';
+import { compressText } from './src/components/demo-block/basedUtil';
 const hljs = require('highlight.js'); // https://highlightjs.org/
+
 const resolve = path.resolve;
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -56,6 +58,27 @@ export default defineConfig({
 
           return ''; // 使用额外的默认转义
         }
+      },
+      markdownItSetup(md) {
+        md.use(require('markdown-it-container'), 'demo', {
+          validate: function (params) {
+            return params.trim().match(/^demo\s*(.*)$/);
+          },
+
+          render: function (tokens, idx) {
+            const token = tokens[idx];
+            const info = token.info.trim();
+            const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+            if (tokens[idx].nesting === 1) {
+              // opening tag
+              const contentHtml = compressText(tokens[idx + 1].content);
+              return `<demo-block data-value="${contentHtml}">` + md.utils.escapeHtml(m[1]) + '\n';
+            } else {
+              // closing tag
+              return '</demo-block>\n';
+            }
+          }
+        });
       }
     })
     // legacy({

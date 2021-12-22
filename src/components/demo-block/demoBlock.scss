@@ -1,0 +1,33 @@
+.online-part {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  border: 1px solid #eee;
+  border-top: 0px;
+  width: 100%;
+  .list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-right: 1px solid #eee;
+    &:last-child {
+      border-right: 0px;
+    }
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+    }
+    .online-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .online-btn {
+      display: block;
+      padding: 10px;
+      cursor: pointer;
+      color: #333;
+    }
+  }
+}

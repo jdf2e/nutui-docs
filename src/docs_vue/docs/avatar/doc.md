@@ -22,40 +22,55 @@ app.use(Icon);
 
 内置 smal / normal / large 三种尺寸规格
 
+::: demo
 ``` html
+<template>
 <nut-avatar size="large" icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
 ></nut-avatar>
 <nut-avatar size="normal" icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
 ></nut-avatar>
 <nut-avatar size="small" icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
-></nut-avatar>  
+></nut-avatar> 
+</template> 
 ```
-
+:::
 ### 修改形状类型
 
+::: demo
 ``` html
+<template>
 <nut-avatar icon="my" shape="square"></nut-avatar>
 <nut-avatar icon="my" shape="round"></nut-avatar>
+</template>
 ```
-
+:::
 ### 修改背景色
 
+::: demo
 ``` html
+<template>
 <nut-avatar icon="my" bg-color="#FA2C19" />
+</template>
 ```
-
+:::
 ### 修改背景icon
 
+::: demo
 ``` html
+<template>
 <nut-avatar icon="https://img12.360buyimg.com/imagetools/jfs/t1/196430/38/8105/14329/60c806a4Ed506298a/e6de9fb7b8490f38.png" />
+</template>
 ```
-
+:::
 ### 设置头像的文本内容
 
+::: demo
 ``` html
+<template>
 <nut-avatar>N</nut-avatar>
+</template>
 ```
-
+:::
 
 ### Prop
 
