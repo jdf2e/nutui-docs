@@ -45,7 +45,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -64,7 +64,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -85,7 +85,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -102,9 +102,10 @@ export default App;
 
 ::: demo
 ```jsx
-import  React from "react";
+import  React ,{useState} from "react";
 import { Button } from '@nutui/nutui-react';
 const App = () => {
+  const [loading,setLoading] = useState(false)
   return (
     <>
       <Button loading type="info"></Button>
@@ -133,7 +134,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -153,7 +154,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -174,7 +175,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
@@ -192,7 +193,7 @@ export default App;
 ::: demo
 ```jsx
 import  React from "react";
-import { Button } from '@test/nutui-react';
+import { Button } from '@nutui/nutui-react';
 
 const App = () => {
   return (
