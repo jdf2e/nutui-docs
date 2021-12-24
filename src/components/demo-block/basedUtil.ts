@@ -17,7 +17,7 @@ export function decompressText(str: string): any {
   return LZUTF8.decompress(decodeBase64(str));
 }
 
-export function copyCodeHtml(code, callback) {
+export function copyCodeHtml(code: string, callback: any): void {
   const oInput = document.createElement('input');
   oInput.value = code;
   document.body.appendChild(oInput);

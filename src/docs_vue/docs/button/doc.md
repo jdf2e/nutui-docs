@@ -23,6 +23,7 @@ app.use(Button);
 
 按钮支持 `default`、`primary`、`info`、`warning`、`danger`、`success` 六种类型，默认为 `default`。
 
+
 ::: demo
 ```html
 <template>
@@ -35,6 +36,8 @@ app.use(Button);
 </template>
 ```
 :::
+
+
 ### 朴素按钮
 
 通过 `plain` 属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
@@ -78,31 +81,32 @@ app.use(Button);
 ::: demo
 ```html
 <template>
-<nut-button loading type="info"></nut-button>
-<nut-button loading type="warning">加载中...</nut-button>
-<nut-button :loading="isLoading" type="success" @click="changeLoading">Click me!</nut-button>
+  <nut-button loading type="info"></nut-button>
+  <nut-button loading type="warning">加载中...</nut-button>
+  <nut-button :loading="isLoading" type="success" @click="changeLoading">Click me!</nut-button>
 </template>
 
 <script>
 import { ref } from 'vue';
 export default {
   setup(props) {
-  let isLoading = ref(false);
-  const changeLoading = () => {
-    isLoading.value = true;
-    setTimeout(() => {
-      isLoading.value = false;
-    }, 3000);
-  };
-  return {
-    isLoading,
-    changeLoading
-  };
+    let isLoading = ref(false);
+    const changeLoading = () => {
+      isLoading.value = true;
+      setTimeout(() => {
+        isLoading.value = false;
+      }, 3000);
+    };
+    return {
+      isLoading,
+      changeLoading
+    };
   }
 }
 </script>
 ```
 :::
+
 ### 图标按钮
 
 ::: demo

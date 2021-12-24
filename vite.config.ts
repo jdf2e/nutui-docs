@@ -66,13 +66,11 @@ export default defineConfig({
           },
 
           render: function (tokens, idx) {
-            const token = tokens[idx];
-            const info = token.info.trim();
             const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
             if (tokens[idx].nesting === 1) {
               // opening tag
               const contentHtml = compressText(tokens[idx + 1].content);
-              return `<demo-block data-value="${contentHtml}">` + md.utils.escapeHtml(m[1]) + '\n';
+              return `<demo-block data-type="vue" data-value="${contentHtml}">` + md.utils.escapeHtml(m[1]) + '\n';
             } else {
               // closing tag
               return '</demo-block>\n';
