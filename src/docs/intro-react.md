@@ -1,6 +1,6 @@
-# NutUI React
+# NutUI-React
 
-NutUI 是京东风格的 React 移动端组件库，开发和服务于移动Web界面的企业级产品。
+NutUI 是京东风格的 React 移动端组件库，开发和服务于移动 Web 界面的企业级产品。
 
 <div style="margin:30px 0;">
     <img src="https://img14.360buyimg.com/imagetools/jfs/t1/167902/2/8762/791358/603742d7E9b4275e3/e09d8f9a8bf4c0ef.png" width="150" alt="NutUI">
@@ -14,27 +14,32 @@ NutUI 是京东风格的 React 移动端组件库，开发和服务于移动Web�
 
 ## 特性
 
-* 70+ 高质量组件（1.0 持续开发中）
-* 基于京东APP 10.0 视觉规范
+* 40+ 高质量组件（1.0 持续开发中）
+* 基于京东 APP 10.0 视觉规范
 * 支持按需引用
-* 详尽的文档和示例
-* 支持 TypeScript
-* 支持服务端渲染（测试阶段）
 * 支持定制主题
+* 支持 TypeScript
+* 详尽的文档和示例
+* 支持服务端渲染（测试阶段）
 * 单元测试覆盖（1.0 开发中）
 
-## 示例 H5 & 小程序
+## 示例 H5 
 
 <img src="https://img12.360buyimg.com/imagetools/jfs/t1/202336/18/18586/7437/61b832ccE0b13d53d/18605da7232a5a0e.png" width="200" alt="NutUI-React" />
-<img src="https://storage.360buyimg.com/jdc-article/gh_f2231eb941be_258.jpg" width="200" alt="NutUI-React" />
+
 
 ## 版本说明
 
-- @nutui/nutui-react 基于React 视觉风格 JD APP 7.0规范 ，只能开发 h5
+- @nutui/nutui-react 基于 React 和 JD APP 10.0 视觉规范 ，只能开发 H5。
+
 ## 支持环境
 
 * Android 5.0+
 * iOS 9.2+
+* react ^17
+* react-dom ^17
+* typescript ^4
+* sass ^1.40.0
 
 ## 构建版本
 
@@ -47,7 +52,9 @@ NutUI 是京东风格的 React 移动端组件库，开发和服务于移动Web�
 
 > 你还可以订阅： https://github.com/jdf2e/nutui/releases.atom 来获得稳定版发布的通知。
 
+## 版本号规则
 
+NutUI-React 遵循 [语义化版本semver](https://semver.org/) 原则。([中文文档](https://semver.org/lang/zh-CN/))
 
 ## 开源协议
 

@@ -31,14 +31,13 @@ ReactDOM.render(
 
 #### 为什么只按需引入样式
 
-NutUI React 默认支持基于 ES modules 的 tree shaking，对于 JS 部分，直接引入 import { Button }
-from '@nutui/nutui-react' 就会有按需加载的效果。因此仅样式不是按需导入的，因此只需按需导入样式即可。
+NutUI-React 默认支持基于 ES modules 的 tree shaking，对于 JS 部分，直接引入 `import { Button } from '@nutui/nutui-react'` 就会有按需加载的效果。因此仅样式不是按需导入的，因此只需按需导入样式即可。
 
 #### Vite 构建工具 通过 vite-plugin 使用按需加载
 
 由于 vite 本身已按需导入了组件库，因此仅样式不是按需导入的，因此只需按需导入样式即可。
 
-Vite 构建工具，使用 vite-plugin-style-import 实现按需引入。
+[Vite](https://vitejs.dev/) 构建工具，使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 实现按需引入。
 
 #### 安装插件
 
@@ -78,60 +77,31 @@ export default defineConfig({
 
 ```
 
-#### WebPack 构建工具
+#### WebPack 构建工具 通过 babel 使用按需加载
+
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
+##### 安装插件
+``` bash
+npm install babel-plugin-import --save-dev
+```
+在 `.babelrc` 或 `babel.config.js` 中添加配置：
 
 ``` javascript
-module: {
-    rules: [
+{
+  // ...
+  plugins: [
+    [
+      "import",
       {
-        test: /\.tsx?$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-                "@babel/preset-typescript",
-              ],
-              plugins: [
-                [
-                  "import",
-                  {
-                    libraryName: "@test/nutui-react",
-                    libraryDirectory: "dist/esm",
-                    style: (file) => {
-                      const fileName = file.match(/\/(\w+)$/)[0];
-                      return `${file
-                        .replace("esm", "packages")
-                        .toLowerCase()}${fileName.toLowerCase()}.scss`;
-                    },
-                    camel2DashComponentName: false,
-                  },
-                  "nutui-react",
-                ],
-              ],
-            },
-          },
-        ],
-        exclude: "/node_modules/",
+        "libraryName": "@nutui/nutui-react",
+        "libraryDirectory": "dist/esm",
+        "style": true,
+        "camel2DashComponentName": false
       },
-      {
-        test: /\.(s[ac]|c)ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "sass-loader",
-            options: {
-              additionalData: `@import "@test/nutui-react/dist/styles/variables.scss";`,
-            },
-          },
-        ],
-      },
-    ],
-  },
-
+      'nutui-react'
+    ]
+  ]
+}
 ```
 
 #### CDN 安装使用示例
@@ -178,9 +148,11 @@ module: {
 > 在页面中直接引入，将无法使用 **主题定制** 等功能。我们推荐使用 *NPM* 或 *YARN* 方式安装，不推荐在页面中直接引入的用法
 
 ## 使用注意事项
-
+- NutUI-React 基于 [react@^17.0.0](https://www.npmjs.com/package/react) 构建
+- NutUI-React 版本提供的 `.scss` 文件建议使用 [Dart Sass ^1.40.0](https://www.npmjs.com/package/sass) 以上版本
 - 组件 css 单位使用的是 **px**，如果你的项目中需要 **rem**
   单位，可借助一些工具进行转换，比如 [webpack](https://www.webpackjs.com/)
   的 [px2rem-loader](https://www.npmjs.com/package/px2rem-loader)、[postcss](https://github.com/postcss/postcss)
   的 [postcss-plugin-px2rem](https://www.npmjs.com/package/postcss-plugin-px2rem)
   插件等
+

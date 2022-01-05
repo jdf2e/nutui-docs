@@ -4,7 +4,7 @@
     <doc-nav></doc-nav>
     <div class="doc-content">
       <div class="doc-content-document">
-        <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc">
+        <div class="doc-content-tabs" v-if="isShow() && isShowTaroDoc && language == 'vue'">
           <div
             class="tab-item"
             :class="{ cur: curKey === item.key }"
@@ -14,7 +14,7 @@
             >{{ item.text }}</div
           >
         </div>
-        <div class="doc-content-tabs" v-if="isShow() && !isShowTaroDoc">
+        <div class="doc-content-tabs" v-if="isShow() && !isShowTaroDoc && language == 'vue'">
           <div class="tab-item cur">vue/taro</div>
         </div>
         <router-view />
@@ -43,7 +43,17 @@ export default defineComponent({
   setup() {
     const route = useRoute();
     const router = useRouter();
-    const excludeTaro = ['/intro', '/start', '/theme', '/joinus', '/starttaro', '/contributing'];
+    const excludeTaroVue = ['/intro', '/start', '/theme', '/joinus', '/starttaro', '/contributing'];
+
+    const excludeTaroReact = [
+      '/intro-react',
+      '/start-react',
+      '/theme-react',
+      '/international',
+      '/resource',
+      '/contributing'
+    ];
+
     const data = reactive({
       demoUrl: 'demo.html',
       curKey: 'vue',
@@ -78,7 +88,8 @@ export default defineComponent({
     };
 
     const isShow = () => {
-      return !excludeTaro.includes(route.path) && language == 'vue';
+      let exclude = language == 'vue' ? excludeTaroVue : excludeTaroReact;
+      return !exclude.includes(route.path);
     };
 
     const isShowTaroDoc = computed(() => {
@@ -116,7 +127,8 @@ export default defineComponent({
       ...toRefs(data),
       handleTabs,
       isShow,
-      isShowTaroDoc
+      isShowTaroDoc,
+      language
     };
   }
 });

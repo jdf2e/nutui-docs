@@ -46,7 +46,9 @@
                 :src="item.cover_image.split(',')[0]"
                 @click="showDesignImgFun(item.cover_image.split(','))"
               />
-              <p class="design-title" v-hover>{{ item.product_name }}</p>
+              <p class="design-title" v-hover @click="showDesignImgFun(item.cover_image.split(','))">{{
+                item.product_name
+              }}</p>
             </div>
           </div>
         </div>
@@ -59,7 +61,7 @@
     v-if="showDesignItemImg && showDesignItemArray.length > 0"
     @click="closeSwiper"
   >
-    <div class="resource-design-item-swiper-main">
+    <div class="resource-design-item-swiper-main" v-if="showDesignItemArray.length > 1">
       <div class="resource-design-item-swiper-main-lefticon" @click.stop="onLeft"></div>
       <div class="resource-design-item-swiper-main__list">
         <div class="swiper-wrapper">
@@ -69,6 +71,16 @@
         </div>
       </div>
       <div class="resource-design-item-swiper-main-righticon" @click.stop="onRight"></div>
+    </div>
+
+    <div class="resource-design-item-swiper-main" v-else>
+      <div class="resource-design-item-swiper-main__list">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(item, index) in showDesignItemArray" :key="index">
+            <img :src="item" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <doc-footer></doc-footer>
@@ -167,17 +179,20 @@ export default defineComponent({
     const showDesignImgFun = (item: []) => {
       data.showDesignItemArray = [].concat(item);
       data.showDesignItemImg = true;
-      setTimeout(() => {
-        caseSwiper = new Swiper('.resource-design-item-swiper-main__list', {
-          direction: 'horizontal',
-          loop: true,
-          on: {}
-        });
-      }, 500);
+      if (item.length > 1) {
+        setTimeout(() => {
+          caseSwiper = new Swiper('.resource-design-item-swiper-main__list', {
+            direction: 'horizontal',
+            loop: true,
+            touchRatio: 0
+          });
+        }, 500);
+      }
     };
 
     const closeSwiper = () => {
       data.showDesignItemImg = false;
+      caseSwiper = null;
     };
     return {
       ...toRefs(data),
@@ -315,9 +330,14 @@ $mainRed: #fa685d;
           display: flex;
           align-items: center;
           justify-content: center;
+
           > img {
             width: auto;
             max-height: 100%;
+
+            &::selection {
+              background: transparent !important;
+            }
           }
         }
       }

@@ -41,7 +41,8 @@
     "serve": "vite preview",
     "prepare": "husky install",
     "test": "jest",
-    "codeformat": "prettier --write ."
+    "codeformat": "prettier --write .",
+    "copydoc": "node ./scripts/copydoc.js"
   },
   "dependencies": {
     "sass": "~1.32.0",

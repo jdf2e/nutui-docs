@@ -105,6 +105,7 @@ export default defineComponent({
         li {
           padding-left: 29px;
           cursor: pointer;
+
           &:hover {
             a {
               color: $doc-default-color;
@@ -116,15 +117,16 @@ export default defineComponent({
               color: $doc-default-color !important;
             }
 
+            &:link,
+            &:visited {
+              color: $title-color;
+            }
+
             &:hover {
               color: $doc-default-color;
               &:visited {
                 color: $doc-default-color;
               }
-            }
-            &:link,
-            &:visited {
-              color: $title-color;
             }
 
             height: 100%;

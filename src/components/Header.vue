@@ -44,8 +44,8 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="user-link" target="_blank" href="https://github.com/jdf2e/nutui"></a>
-            <a class="user-link gitee" target="_blank" href="https://gitee.com/jd-platform-opensource/nutui"></a>
+            <a class="user-link" target="_blank" v-if="repository.git" :href="repository.git"></a>
+            <a class="user-link gitee" target="_blank" v-if="repository.gitee" :href="repository.gitee"></a>
           </li>
         </ul>
       </div>
@@ -55,8 +55,7 @@
 <script lang="ts">
 import { defineComponent, reactive, computed, onMounted } from 'vue';
 import Search from './Search.vue';
-import { header, versions, nav } from '@/config/index';
-import { version } from '@/config/index';
+import { header, versions, version, nav, repository, language } from '@/config/index';
 import { RefData } from '@/assets/util/ref';
 export default defineComponent({
   name: 'doc-header',
@@ -71,7 +70,7 @@ export default defineComponent({
     const data = reactive({
       theme: 'black',
       // headerBg: 'url(' + require('@/assets/images/header-bg.png') + ')',
-      verson: '3.x',
+      verson: language == 'vue' ? '3.x' : '1.x',
       navIndex: 0,
       activeIndex: 0,
       isShowSelect: false
@@ -116,6 +115,7 @@ export default defineComponent({
       header,
       versions,
       version,
+      repository,
       data,
       toHome,
       isActive,
