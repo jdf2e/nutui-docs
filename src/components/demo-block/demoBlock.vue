@@ -29,7 +29,7 @@ export default {
 import React from "react";
 import ReactDOM from "react-dom";
 import '@nutui/nutui-react/dist/style.css'
-import App from "./app.jsx";
+import App from "./app.tsx";
 import "./app.scss";
 ReactDOM.render(
   <App/>,
