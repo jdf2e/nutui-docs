@@ -49,6 +49,7 @@ export default defineComponent({
       '/intro-react',
       '/start-react',
       '/theme-react',
+      '/joinus',
       '/international',
       '/resource',
       '/contributing'
