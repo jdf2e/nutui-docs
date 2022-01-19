@@ -18,13 +18,20 @@
           <div class="tab-item cur">vue/taro</div>
         </div>
         <router-view />
+        <div class="doc-content-contributors" v-if="isShow() && contributorsData.length !== 0">
+          <a href="javascript:void(0)" v-for="(item, index) in contributorsData" :key="index + 'Contributor'">
+            <img :src="item.url" alt="" />
+            <div class="contributors-hover">贡献者:{{ item.username }}</div>
+          </a>
+        </div>
+        <doc-footer v-if="isShow()" :showLogo="false"></doc-footer>
       </div>
       <doc-demo-preview v-if="isShow()" :url="demoUrl"></doc-demo-preview>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, reactive, toRefs, computed } from 'vue';
+import { defineComponent, onMounted, reactive, toRefs, computed, ref } from 'vue';
 import { demoUrl, language, nav } from '@/config/index';
 import { onBeforeRouteUpdate, RouteLocationNormalized, useRoute, useRouter } from 'vue-router';
 import Header from '@/components/Header.vue';
@@ -32,6 +39,7 @@ import Nav from '@/components/Nav.vue';
 import Footer from '@/components/Footer.vue';
 import DemoPreview from '@/components/DemoPreview.vue';
 import { RefData } from '@/assets/util/ref';
+import { ApiService } from '@/service/ApiService';
 export default defineComponent({
   name: 'doc',
   components: {
@@ -69,6 +77,7 @@ export default defineComponent({
         }
       ]
     });
+    const contributorsData = ref([]); //贡献者表格
 
     const configNav = computed(() => {
       let tarodocs = [] as string[];
@@ -96,6 +105,15 @@ export default defineComponent({
     const isShowTaroDoc = computed(() => {
       return configNav.value.findIndex((item) => item === route.path.substr(1)) > -1;
     });
+    const getContributors = (router: RouteLocationNormalized) => {
+      // 贡献者列表接口
+      const apiService = new ApiService();
+      apiService.getContributors(router.path.split('/')[1]).then((res) => {
+        if (res && res.state == 0) {
+          contributorsData.value = res.value.data;
+        }
+      });
+    };
 
     const watchDemoUrl = (router: RouteLocationNormalized) => {
       const { origin, pathname } = window.location;
@@ -117,11 +135,13 @@ export default defineComponent({
     onMounted(() => {
       watchDemoUrl(route);
       data.curKey = isTaro(route) ? 'taro' : 'vue';
+      getContributors(route);
     });
 
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
       data.curKey = isTaro(to) ? 'taro' : 'vue';
+      getContributors(to);
     });
 
     return {
@@ -129,7 +149,8 @@ export default defineComponent({
       handleTabs,
       isShow,
       isShowTaroDoc,
-      language
+      language,
+      contributorsData
     };
   }
 });
@@ -177,6 +198,36 @@ export default defineComponent({
         }
         &:hover {
           background-color: #f7f8fa;
+        }
+      }
+    }
+    &-contributors {
+      margin: 50px 0;
+      a {
+        position: relative;
+      }
+      img {
+        height: 26px;
+        height: 26px;
+        border-radius: 50%;
+        margin-left: 8px;
+      }
+      .contributors-hover {
+        display: none;
+        padding: 5px 10px;
+        color: #fff;
+        font-size: 12px;
+        background-color: #000;
+        border-radius: 5px;
+        position: absolute;
+        /* min-width:150px; */
+        white-space: nowrap;
+        top: -200%;
+        transform: translateX(-55%);
+      }
+      a:hover {
+        .contributors-hover {
+          display: inline-block;
         }
       }
     }

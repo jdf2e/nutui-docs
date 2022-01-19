@@ -40,4 +40,14 @@ export class ApiService {
       pageSize: 100
     });
   }
+  /**
+   * 获取组件贡献者
+   * @returns
+   * @memberof contributorsApiService
+   */
+  getContributors(name: string) {
+    return this.httpClient.request('/openapi/contributors', 'get', {
+      name
+    });
+  }
 }

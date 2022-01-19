@@ -1,7 +1,7 @@
 <template>
   <div class="doc-footer" :class="`doc-footer-${themeColor}`">
-    <div class="doc-footer-content">
-      <div class="doc-footer-list">
+    <div class="doc-footer-content" :class="!showLogo ? 'minisize' : ''">
+      <div class="doc-footer-list" v-if="showLogo">
         <img class="doc-footer-logo" v-if="language.toLowerCase() == 'vue'" src="@/assets/images/logo-header-red.png" />
         <img class="doc-footer-logo" v-else src="@/assets/images/logo-header-red-react.png" />
       </div>
@@ -98,7 +98,14 @@ import { repository, language } from '@/config/index';
 import { RefData } from '@/assets/util/ref';
 export default defineComponent({
   name: 'doc-footer',
-  setup() {
+  props: {
+    showLogo: {
+      type: Boolean,
+      default: true
+    }
+  },
+  setup(props) {
+    console.log(props.showLogo, 6666666666);
     const data = reactive({
       themeList: [
         {
@@ -159,6 +166,7 @@ export default defineComponent({
       justify-content: space-between;
       align-items: flex-start;
     }
+
     &-list {
       position: relative;
       &:first-child {
@@ -204,6 +212,14 @@ export default defineComponent({
       position: absolute;
       border-radius: 2px;
       text-align: left;
+    }
+    .minisize {
+      width: 100%;
+    }
+    .minisize {
+      .doc-footer-select-hd {
+        margin-top: 24px;
+      }
     }
     &-select-item {
       width: 92px;
