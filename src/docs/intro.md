@@ -49,7 +49,7 @@ NutUI 是京东风格的移动端组件库，它支持使用 Vue 语言来编写
 
 > AMD 环境、Webpack、Vite 等构建工具环境、服务端建议使用 es 版，非模块化环境（如通过 `<script>` 标签直接引用）建议使用 umd 压缩版。
 
-最新稳定版：![npm](https://img.shields.io/npm/v/@nutui/nutui.svg)
+最新稳定版：![npm](https://img.shields.io/github/package-json/v/jdf2e/nutui)
 
 > 你还可以订阅： https://github.com/jdf2e/nutui/releases.atom 来获得稳定版发布的通知。
 
