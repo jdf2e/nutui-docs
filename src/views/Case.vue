@@ -38,9 +38,10 @@
       </div>
       <div class="tab-box" v-else>
         <h4 class="sub-title">全部案例</h4>
-        <div>
+        <template v-for="pItem in caseList" v-show="activeIndex === 0">
+          <h3>{{ pItem.year }}</h3>
           <div class="tab-bd">
-            <div class="design-item" v-for="(item, i) in caseList" :key="i">
+            <div class="design-item" v-for="(item, i) in pItem.list" :key="i">
               <img
                 class="img-design"
                 :src="item.cover_image.split(',')[0]"
@@ -51,7 +52,7 @@
               }}</p>
             </div>
           </div>
-        </div>
+        </template>
       </div>
     </div>
   </div>
@@ -100,25 +101,9 @@ export default defineComponent({
     [Footer.name]: Footer
   },
   setup() {
-    const articleList: any[] = [];
     const caseList: any[] = [];
-    const communityArticleList: any[] = [];
     const data = reactive({
-      articleList,
       caseList,
-      communityArticleList,
-      tabData: [
-        {
-          title: '全部文章'
-        }
-        // {
-        //   title: '性能体验'
-        // },
-        // {
-        //   title: '性能体验'
-        // }
-      ],
-      activeIndex: 0,
       showNutuiCat: false,
       showDesignItemImg: false,
       showDesignItemArray: []
@@ -134,41 +119,27 @@ export default defineComponent({
 
       // 文章列表接口
       const apiService = new ApiService();
-      apiService.getArticle().then((res) => {
-        if (res?.state == 0) {
-          (res.value.data.arrays as any[]).forEach((element) => {
-            if (element.type == 1) {
-              let year = element.create_time.split('-')[0];
-              let index = data.articleList.findIndex((item) => item.year == year);
-              if (index == -1) {
-                data.articleList.push({
-                  year,
-                  list: [element]
-                });
-              } else {
-                data.articleList[index].list.push(element);
-              }
-            } else {
-              data.communityArticleList.push(element);
-            }
-          });
-        }
-      });
       apiService.getCases(0).then((res) => {
         if (res?.state == 0) {
-          data.caseList = res.value.data.arrays;
+          (res.value.data.arrays as any[]).forEach((element) => {
+            let year = element.create_time.split('-')[0];
+            let index = data.caseList.findIndex((item) => item.year == year);
+            if (index == -1) {
+              data.caseList.push({
+                year,
+                list: [element]
+              });
+            } else {
+              data.caseList[index].list.push(element);
+            }
+          });
         }
       });
     });
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
     });
-    const clickTab = (index: number) => {
-      data.activeIndex = index;
-    };
-    const toLink = (id: number) => {
-      window.open('//jelly.jd.com/article/' + id);
-    };
+
     const onLeft = () => {
       caseSwiper.slidePrev();
     };
@@ -196,8 +167,6 @@ export default defineComponent({
     };
     return {
       ...toRefs(data),
-      clickTab,
-      toLink,
       onLeft,
       onRight,
       showDesignImgFun,
