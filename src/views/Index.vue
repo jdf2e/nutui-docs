@@ -19,7 +19,11 @@
         </div>
         <router-view />
         <div class="doc-content-contributors" v-if="isShow() && contributorsData.length !== 0">
-          <a href="javascript:void(0)" v-for="(item, index) in contributorsData" :key="index + 'Contributor'">
+          <a
+            :href="'https://github.com/' + item.username"
+            v-for="(item, index) in contributorsData"
+            :key="index + 'Contributor'"
+          >
             <img :src="item.url" alt="" />
             <div class="contributors-hover">贡献者:{{ item.username }}</div>
           </a>
