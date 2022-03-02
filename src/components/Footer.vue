@@ -163,6 +163,7 @@ export default defineComponent({
 <style lang="scss">
 .doc {
   &-footer {
+    margin-top: 30px;
     padding: 30px 80px 20px;
     text-align: center;
     &-content {

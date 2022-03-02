@@ -1,5 +1,5 @@
 {
-  "version": "3.1.16",
+  "version": "3.1.17",
   "nav": [
     {
       "name": "基础组件",
@@ -143,8 +143,6 @@
           "desc": "图片预览",
           "sort": 4,
           "show": true,
-          "taro": false,
-          "tarodoc": true,
           "author": "zongyue3"
         },
         {

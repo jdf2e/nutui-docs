@@ -84,6 +84,7 @@ routes.push({
     name: '/'
   }
 });
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes,

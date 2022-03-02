@@ -107,12 +107,12 @@ export default defineComponent({
     };
 
     const isShowTaroDoc = computed(() => {
-      return configNav.value.findIndex((item) => item === route.path.substr(1)) > -1;
+      return configNav.value.findIndex((item) => item === route.path.toLocaleLowerCase().substr(1)) > -1;
     });
     const getContributors = (router: RouteLocationNormalized) => {
       // 贡献者列表接口
       const apiService = new ApiService();
-      apiService.getContributors(router.path.split('/')[1]).then((res) => {
+      apiService.getContributors(router.path.toLocaleLowerCase().split('/')[1].split('-')[0]).then((res) => {
         if (res && res.state == 0) {
           contributorsData.value = res.value.data;
         }
@@ -127,7 +127,7 @@ export default defineComponent({
     };
 
     const watchDocMd = () => {
-      const path = route.path;
+      const path = route.path.toLocaleLowerCase();
       router.replace(isTaro(route) ? path.substr(0, path.length - 5) : `${path}-taro`);
     };
 
