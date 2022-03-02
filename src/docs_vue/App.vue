@@ -3,8 +3,12 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useThemeEditor } from '@/assets/util/helper';
 export default defineComponent({
-  name: 'app'
+  name: 'app',
+  setup() {
+    useThemeEditor();
+  }
 });
 </script>
 

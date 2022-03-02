@@ -33,13 +33,13 @@ let guide = [
         link: '/jdl/',
         language: ['Vue2'],
         app: '物流视觉'
+      },
+      {
+        name: 'JDT',
+        link: '/?theme=jdt/#/button',
+        language: ['Vue3', 'Taro'],
+        app: '科技视觉'
       }
-      // {
-      //   name: 'JDT',
-      //   link: '/?theme=jdt/#/button',
-      //   language: ['Vue3', 'Taro'],
-      //   app: '科技视觉'
-      // }
     ]
   },
 
