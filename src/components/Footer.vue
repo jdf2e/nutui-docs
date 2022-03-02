@@ -9,6 +9,12 @@
         <h4 class="doc-footer-title">相关产品</h4>
 
         <div class="doc-footer-item"
+          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/cat/#/" v-hover>NutUI-Cat</a>
+        </div>
+        <div class="doc-footer-item"
+          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/bingo/#/" v-hover>NutUI-Bingo</a>
+        </div>
+        <div class="doc-footer-item"
           ><a class="sub-link" target="_blank" href="https://taro.jd.com" v-hover>Taro</a>
         </div>
         <div class="doc-footer-item"
@@ -17,9 +23,9 @@
         <div class="doc-footer-item"
           ><a class="sub-link" target="_blank" href="https://relay.jd.com" v-hover>Relay</a>
         </div>
-        <div class="doc-footer-item"
+        <!-- <div class="doc-footer-item"
           ><a class="sub-link" target="_blank" href="https://ling.jd.com/jdw" v-hover>羚珑</a>
-        </div>
+        </div> -->
         <div class="doc-footer-item"
           ><a class="sub-link" target="_blank" href="https://legao.jd.com/" v-hover>Legao</a>
         </div>
@@ -163,7 +169,6 @@ export default defineComponent({
 <style lang="scss">
 .doc {
   &-footer {
-    margin-top: 30px;
     padding: 30px 80px 20px;
     text-align: center;
     &-content {
