@@ -9,10 +9,10 @@
         <h4 class="doc-footer-title">相关产品</h4>
 
         <div class="doc-footer-item"
-          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/cat/#/" v-hover>NutUI-Cat</a>
+          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/cat/#/" v-hover>Cat</a>
         </div>
         <div class="doc-footer-item"
-          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/bingo/#/" v-hover>NutUI-Bingo</a>
+          ><a class="sub-link" target="_blank" href="https://nutui.jd.com/bingo/#/" v-hover>Bingo</a>
         </div>
         <div class="doc-footer-item"
           ><a class="sub-link" target="_blank" href="https://taro.jd.com" v-hover>Taro</a>
