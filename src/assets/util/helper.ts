@@ -244,3 +244,12 @@ export const useThemeEditor = function () {
     { immediate: true }
   );
 };
+
+//数组分组
+export const arrayGroup = (arr: any[], num: number): any[] => {
+  let arrSlice = [];
+  for (let i = 0; i < arr.length; i += num) {
+    arrSlice.push(arr.slice(i, i + num));
+  }
+  return arrSlice;
+};
