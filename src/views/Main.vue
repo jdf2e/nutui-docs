@@ -107,7 +107,7 @@
           <div class="doc-content-cases-content__main-lefticon" @click="onLeft"></div>
           <div class="doc-content-cases-content__main-iconinfo">
             <h4>{{ currentCaseItem.product_name }}</h4>
-            <p>{{ currentCaseItem.product_info }}</p>
+            <!-- <p>{{ currentCaseItem.product_info }}</p> -->
             <img :src="currentCaseItem.logo" />
           </div>
           <div
@@ -124,6 +124,26 @@
           <div class="swiper-wrapper" :class="[themeNameValue() == 'black' ? 'noShadow' : '']">
             <div class="swiper-slide" v-for="(item, index) in casesImages" :key="index">
               <img :src="item.cover_image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="doc-content-qrcode" v-if="qrcodeList.length != 0">
+      <div class="doc-content-qrcode-content">
+        <div class="doc-content-qrcode-content-lefticon" @click="onQRLeft"></div>
+        <div class="doc-content-qrcode-content-righticon" @click="onQRRight"></div>
+      </div>
+      <div class="doc-content-qrcode-contain">
+        <div class="doc-content-qrcode-contain-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(arr, index) in qrcodeList" :key="index">
+              <div class="item" v-for="(item, index) in arr" :key="index + 'item'">
+                <div class="qrcode-img">
+                  <img :src="item.qr_code" />
+                </div>
+                <div class="product_name" v-hover>{{ item.product_name }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -154,6 +174,7 @@ import 'swiper/swiper.min.css';
 import Swiper from 'swiper/swiper-bundle.min.js';
 import { useRouter } from 'vue-router';
 import { language, homePage } from '@/config/index';
+import { arrayGroup } from '@/assets/util/index';
 export default defineComponent({
   name: 'main',
   components: {
@@ -169,13 +190,40 @@ export default defineComponent({
       currentCaseItem: {},
       currentCaseIndex: 0,
       localTheme: localStorage.getItem('nutui-theme-color'),
-      showAwait: false
+      showAwait: false,
+      qrcodeList: []
     });
     let caseSwiper: any = null;
+    let qrcodeSwiper: any = null;
+
     onMounted(() => {
       if (homePage.article.show) getArticle();
       if (homePage.cases.show) getCasesImages();
+      if (homePage.qrcodeShow) getQRCode();
     });
+    //获取案例二维码
+    const getQRCode = () => {
+      const apiService = new ApiService();
+      apiService.getQRCode().then((res) => {
+        if (res?.state == 0 && res?.value.data.length != 0) {
+          data.qrcodeList = arrayGroup(res.value.data, 5);
+          setTimeout(() => {
+            qrcodeSwiper = new Swiper('.doc-content-qrcode-contain-swiper', {
+              direction: 'horizontal',
+              slidesPerView: 'auto',
+              loop: true
+            });
+          }, 500);
+        }
+      });
+    };
+    const onQRLeft = () => {
+      console.log(123467467467467467);
+      qrcodeSwiper.slidePrev();
+    };
+    const onQRRight = () => {
+      qrcodeSwiper.slideNext();
+    };
     // 文章列表
     const getArticle = () => {
       const apiService = new ApiService();
@@ -286,7 +334,9 @@ export default defineComponent({
       goBingoDetails,
       goAwait,
       hideAwait,
-      bannerName
+      bannerName,
+      onQRLeft,
+      onQRRight
     };
   }
 });
@@ -599,10 +649,16 @@ export default defineComponent({
           flex-shrink: 0;
           display: flex;
           flex-direction: column;
+          align-items: center;
           > h4 {
             line-height: 42px;
-            font-size: 26px;
+            font-size: 22px;
+            margin-bottom: 40px;
             color: rgba(255, 255, 255, 1);
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
           > p {
             font-size: 18px;
@@ -680,11 +736,87 @@ export default defineComponent({
       -webkit-box-orient: vertical;
     }
   }
+  &-qrcode {
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto 90px;
+    position: relative;
+    &-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-75%);
+      z-index: 2;
+      &-lefticon {
+        margin-right: 20px;
+        width: 36px;
+        height: 36px;
+        background-image: url('@/assets/images/right-arrow.png');
+        transform: rotate(180deg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+        &:hover {
+          transform: rotate(0);
+          background-image: url('@/assets/images/left-arrow.png');
+        }
+      }
+      &-righticon {
+        margin-left: 20px;
+        width: 36px;
+        height: 36px;
+        background-image: url('@/assets/images/right-arrow.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        cursor: pointer;
+        z-index: 1;
+        &:hover {
+          transform: rotate(180deg);
+          background-image: url('@/assets/images/left-arrow.png');
+        }
+      }
+    }
+    &-contain {
+      margin: 0 auto;
+      .swiper-slide {
+        padding: 0 80px;
+        display: flex;
+        .item {
+          width: 206px;
+          text-align: center;
+          .qrcode-img {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 1px 0px 5px #fff;
+            > img {
+              height: 80px;
+              width: 80px;
+            }
+          }
+          .product_name {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
 .doc-content-index {
   display: flex;
   height: 926px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
   background-color: #070505;
   min-width: 1200px;
   .content-left {
@@ -866,6 +998,15 @@ export default defineComponent({
   .doc-content-more {
     .more-title {
       color: $theme-white-footer-word3;
+    }
+  }
+  .doc-content-qrcode {
+    .swiper-slide {
+      .item {
+        .product_name {
+          color: $theme-white-footer-word3;
+        }
+      }
     }
   }
   .taro-content {
