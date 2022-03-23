@@ -130,7 +130,7 @@ export default defineConfig({
       // const query = 'resolutionWidth=414&resolutionHeight=736';
       const query = 'file=/src/App.vue';
 
-      if (codeType === 'react') {
+      if (codeType.value === 'react') {
         jumpHref.value = `https://codehouse.jd.com/?source=share&type=react&mainJs=${mainReactJs.value}&appValue=${onlineCode.value.dataset.value}&scssValue=`;
       } else {
         jumpHref1.value = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}&query=${query}&resolutionHeight=736`;
