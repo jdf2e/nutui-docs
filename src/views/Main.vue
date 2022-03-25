@@ -788,8 +788,8 @@ export default defineComponent({
           width: 206px;
           text-align: center;
           .qrcode-img {
-            width: 100px;
-            height: 100px;
+            width: 130px;
+            height: 130px;
             overflow: hidden;
             border-radius: 20px;
             background: #fff;
@@ -799,8 +799,8 @@ export default defineComponent({
             margin: 0 auto;
             box-shadow: 1px 0px 5px #fff;
             > img {
-              height: 80px;
-              width: 80px;
+              height: 120px;
+              width: 120px;
             }
           }
           .product_name {
