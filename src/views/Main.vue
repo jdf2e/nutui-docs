@@ -651,6 +651,7 @@ export default defineComponent({
           flex-direction: column;
           align-items: center;
           > h4 {
+            max-width: 100%;
             line-height: 42px;
             font-size: 22px;
             margin-bottom: 40px;

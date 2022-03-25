@@ -31,8 +31,8 @@
       </div>
       <div class="tab-box" v-else>
         <h4 class="sub-title">全部文章</h4>
-        <template v-for="pItem in articleList" v-show="activeIndex === 0">
-          <h3>{{ pItem.year }}</h3>
+        <template v-for="pItem in articleList" v-show="activeIndex === 0" :key="pItem.category">
+          <h3>{{ pItem.title }}</h3>
           <div class="tab-bd">
             <div class="design-item" v-for="item in pItem.list" :key="item.id" @click="toLink(item.id)">
               <img class="img-design" :src="item.cover_image" />
@@ -100,22 +100,33 @@ export default defineComponent({
       const apiService = new ApiService();
       apiService.getArticle().then((res) => {
         if (res?.state == 0) {
+          const categoryMap: {
+            [props: string]: string;
+          } = {
+            1: '项目实践',
+            2: '技术揭秘',
+            3: '成长历程'
+          };
           (res.value.data.arrays as any[]).forEach((element) => {
             if (element.type == 1) {
-              let year = element.create_time.split('-')[0];
-              let index = data.articleList.findIndex((item) => item.year == year);
-              if (index == -1) {
+              let category = element.category;
+              let index = data.articleList.findIndex((item) => item.category == category);
+              if (index != -1) {
+                data.articleList[index].list.push(element);
+              } else {
                 data.articleList.push({
-                  year,
+                  category: category,
+                  title: categoryMap[category],
                   list: [element]
                 });
-              } else {
-                data.articleList[index].list.push(element);
               }
             } else {
               data.communityArticleList.push(element);
             }
           });
+          // 进行排序
+          let order = [3, 2, 1];
+          data.articleList.sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category));
         }
       });
     });
@@ -210,8 +221,11 @@ $mainRed: #fa685d;
 }
 .tab {
   &-box {
+    .sub-title {
+      margin-bottom: 20px;
+    }
     > h3 {
-      margin-bottom: 10px;
+      margin-bottom: 18px;
     }
   }
   &-hd {
@@ -260,13 +274,10 @@ $mainRed: #fa685d;
     line-height: 22px;
     font-size: 16px;
     color: #1d1d21;
-    text-overflow: -o-ellipsis-lastline;
-    overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
   }
 }
 .article {
