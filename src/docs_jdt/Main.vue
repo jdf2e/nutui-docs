@@ -216,7 +216,7 @@ export default defineComponent({
   position: relative;
   overflow: hidden;
   top: -64px;
-  background: bottom/contain no-repeat url(/3x/src/docs_jdt/assets/images/bottom-bg.png),
+  background: bottom/contain no-repeat url('@/docs_jdt/assets/images/bottom-bg.png'),
     linear-gradient(221deg, #f2fffc 10%, #ffffff 100%);
   &-content {
     min-width: 1200px;
