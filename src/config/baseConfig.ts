@@ -132,6 +132,10 @@ export const SiteVue = {
     {
       name: 'nutui-react',
       link: 'https://nutui.jd.com/react'
+    },
+    {
+      name: 'nutui-jdt',
+      link: '/jdt/'
     }
   ],
 

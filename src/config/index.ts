@@ -36,7 +36,7 @@ let guide = [
       },
       {
         name: 'JDT',
-        link: '/?theme=jdt/#/button',
+        link: '/jdt/',
         language: ['Vue3', 'Taro'],
         app: '科技视觉'
       }
