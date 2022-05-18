@@ -15,15 +15,14 @@
             <div class="leftButton">
               <a class="leftButtonText" href="/jdt/?theme=jdt/#/button">开始使用</a>
             </div>
-            <!-- 待适配移动端展示时放开 -->
-            <!-- <div class="rightButton">
+            <div class="rightButton">
               <div class="rightButtonText">扫码体验</div>
 
               <div class="qrcodepart">
                 <div class="qrcode-text"> 请使用手机扫码体验 </div>
                 <div class="qrcode qrcode-vue"> </div>
               </div>
-            </div> -->
+            </div>
             <iframe
               style="margin-left: 12px"
               src="https://ghbtns.com/github-btn.html?user=jdf2e&repo=nutui&type=star&count=true&size=large"
@@ -123,90 +122,48 @@ export default defineComponent({
   }
 }
 
-@keyframes ballRotateX {
-  0% {
-    left: 100px;
+@keyframes rotateMain {
+  from {
+    transform: rotate(0deg) translateY(25px) rotate(0deg);
   }
-  100% {
-    left: 150px;
-  }
-}
-@keyframes ballRotateY {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: -50px;
+  to {
+    transform: rotate(360deg) translateY(25px) rotate(-360deg);
   }
 }
 
-@keyframes ballRotateType1X {
-  0% {
-    left: 0px;
+@keyframes rotateType1 {
+  from {
+    transform: rotate(0deg) translateY(-25px) rotate(0deg);
   }
-  100% {
-    left: -150px;
-  }
-}
-@keyframes ballRotateType1Y {
-  0% {
-    top: -50px;
-  }
-  100% {
-    top: -200px;
+  to {
+    transform: rotate(360deg) translateY(-25px) rotate(-360deg);
   }
 }
 
-@keyframes ballRotateType2X {
-  0% {
-    left: 0px;
+@keyframes rotateType2 {
+  from {
+    transform: rotate(0deg) translateY(-50px) rotate(0deg);
   }
-  100% {
-    left: -50px;
-  }
-}
-@keyframes ballRotateType2Y {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: -50px;
+  to {
+    transform: rotate(360deg) translateY(-50px) rotate(-360deg);
   }
 }
 
-@keyframes ballRotateType3X {
-  0% {
-    left: 0px;
+@keyframes rotateType3 {
+  from {
+    transform: rotate(360deg) translateY(-25px) rotate(-360deg);
   }
-  100% {
-    left: 50px;
-  }
-}
-
-@keyframes ballRotateType3Y {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 50px;
+  to {
+    transform: rotate(0deg) translateY(-25px) rotate(0deg);
   }
 }
 
-@keyframes ballRotateType4X {
-  0% {
-    left: 0px;
+@keyframes rotateType4 {
+  from {
+    transform: rotate(0deg) translateY(-35px) rotate(0deg);
   }
-  100% {
-    left: 70px;
-  }
-}
-
-@keyframes ballRotateType4Y {
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 70px;
+  to {
+    transform: rotate(360deg) translateY(-35px) rotate(-360deg);
   }
 }
 
@@ -244,8 +201,7 @@ export default defineComponent({
     left: 100px;
     top: -100px;
     background-image: url('//storage.jd.com/ued-library/nutui-jdt-ball.png');
-    animation: ballRotateX 30s cubic-bezier(0.36, 0, 0.64, 1) -15s infinite alternate,
-      ballRotateY 30s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateMain 30s linear 0s infinite forwards;
   }
 }
 
@@ -266,8 +222,7 @@ export default defineComponent({
     z-index: -1;
     div {
       background-image: url('@/docs_jdt/assets/images/ball-group.png');
-      animation: ballRotateType2X 10s cubic-bezier(0.36, 0, 0.64, 1) -5s infinite alternate,
-        ballRotateType2Y 10s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+      animation: rotateType1 10s linear 0s infinite forwards;
     }
   }
 
@@ -305,7 +260,7 @@ export default defineComponent({
     margin-top: 70px;
     iframe {
       align-self: center;
-      animation: fadeInBottom 0.52s both 1.1s;
+      animation: fadeInBottom 0.52s both 1.3s;
     }
     .leftButton {
       display: flex;
@@ -421,14 +376,13 @@ export default defineComponent({
 }
 
 .ball1 {
-  left: 44%;
-  top: -120px;
+  left: 42%;
+  top: -170px;
   width: 400px;
   height: 400px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right1.png');
-    animation: ballRotateType1X 30s cubic-bezier(0.36, 0, 0.64, 1) -15s infinite alternate,
-      ballRotateType1Y 30s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType2 30s linear 0s infinite forwards;
   }
 }
 
@@ -439,10 +393,10 @@ export default defineComponent({
   height: 55px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right2.png');
-    animation: ballRotateType2X 20s cubic-bezier(0.36, 0, 0.64, 1) -10s infinite alternate,
-      ballRotateType2Y 20s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType1 20s linear 0s infinite forwards;
   }
 }
+
 .ball3 {
   left: 70%;
   top: 125px;
@@ -450,10 +404,10 @@ export default defineComponent({
   height: 150px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right3.png');
-    animation: ballRotateType2X 30s cubic-bezier(0.36, 0, 0.64, 1) -15s infinite alternate,
-      ballRotateType2Y 30s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType3 30s linear 0s infinite forwards;
   }
 }
+
 .ball4 {
   left: 84%;
   top: 300px;
@@ -461,10 +415,10 @@ export default defineComponent({
   height: 314px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right4.png');
-    animation: ballRotateType4X 30s cubic-bezier(0.36, 0, 0.64, 1) -15s infinite alternate,
-      ballRotateType4Y 30s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType4 30s linear 0s infinite forwards;
   }
 }
+
 .ball5 {
   left: 78%;
   top: 500px;
@@ -472,10 +426,10 @@ export default defineComponent({
   height: 55px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right5.png');
-    animation: ballRotateType2X 30s cubic-bezier(0.36, 0, 0.64, 1) -15s infinite alternate,
-      ballRotateType2Y 30s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType3 30s linear 0s infinite forwards;
   }
 }
+
 .ball6 {
   left: 42%;
   top: 380px;
@@ -483,10 +437,10 @@ export default defineComponent({
   height: 150px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right6.png');
-    animation: ballRotateType3X 40s cubic-bezier(0.36, 0, 0.64, 1) -20s infinite alternate,
-      ballRotateType3Y 40s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType3 40s linear 0s infinite forwards;
   }
 }
+
 .ball7 {
   left: 70%;
   top: 350px;
@@ -494,8 +448,7 @@ export default defineComponent({
   height: 50px;
   div {
     background-image: url('@/docs_jdt/assets/images/ball-right7.png');
-    animation: ballRotateType2X 20s cubic-bezier(0.36, 0, 0.64, 1) -10s infinite alternate,
-      ballRotateType2Y 20s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+    animation: rotateType1 20s linear 0s infinite forwards;
   }
 }
 </style>
