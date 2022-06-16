@@ -12,9 +12,11 @@
 你需要保证你的 Node.js 版本大于 12，把仓库 clone 到本地，并运行以下命令：
 
 ```bash
-$ npm install # or yarn
-$ npm run dev
+$ yarn install
+$ yarn run dev
 ```
+
+> install 之前您可能还需要准照 https://github.com/Automattic/node-canvas#compiling 的说明来确保 `node-canvas` 能成功安装。
 
 ## 提交 commit
 
