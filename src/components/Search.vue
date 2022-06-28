@@ -28,6 +28,7 @@
 import { defineComponent, reactive, onMounted, watch } from 'vue';
 import { nav } from '@/config/index';
 import { useRouter } from 'vue-router';
+import { log } from 'lzutf8';
 export default defineComponent({
   name: 'search',
   setup() {
@@ -107,7 +108,7 @@ export default defineComponent({
           data.searchIndex = searchIndex;
           if (e.keyCode == 13) {
             router.push({
-              path: '/' + searchList[searchIndex].name
+              path: '/zh-CN/component/' + searchList[searchIndex].name
             });
             data.searchCurName = '';
             data.searchIndex = 0;
