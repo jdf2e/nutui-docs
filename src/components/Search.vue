@@ -28,7 +28,7 @@
 import { defineComponent, reactive, onMounted, watch } from 'vue';
 import { nav } from '@/config/index';
 import { useRouter } from 'vue-router';
-import { log } from 'lzutf8';
+
 export default defineComponent({
   name: 'search',
   setup() {
